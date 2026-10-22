@@ -1,0 +1,31 @@
+appId: br.olhodehorus.desktop
+productName: Olho de Hórus
+directories:
+  output: release
+files:
+  - dist/**
+  - server/**
+  - desktop/**
+  - package.json
+asar: true
+npmRebuild: false
+asarUnpack:
+  - node_modules/better-sqlite3/**
+  - dist/**
+win:
+  icon: assets/images/olho-de-horus-logo.png
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+  artifactName: ${productName}-${version}-${arch}.${ext}
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+portable:
+  artifactName: ${productName}-${version}-portable.${ext}

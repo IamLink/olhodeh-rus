@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#071222" />
+    <meta name="description" content="Protótipo local para acompanhamento pós-missão de astronautas." />
+    <title>Olho de Hórus — Recuperação</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./src/app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-section-label">ACOMPANHAMENTO</div>
+        <nav class="nav-list" aria-label="Navegação principal">
+          <button class="nav-item active" data-page="inicio"><span class="nav-icon">⌂</span><span>Início</span></button>
+          <button class="nav-item" data-page="astronautas"><span class="nav-icon">♙</span><span>Astronautas</span><span class="nav-count" id="nav-count">0</span></button>
+          <button class="nav-item" data-page="avaliacao"><span class="nav-icon">✳</span><span>Avaliação médica</span></button>
+          <button class="nav-item" data-page="reabilitacao"><span class="nav-icon">⌁</span><span>Reabilitação física</span></button>
+          <button class="nav-item" data-page="psicologico"><span class="nav-icon">♡</span><span>Acompanhamento psicológico</span></button>
+          <button class="nav-item" data-page="sono"><span class="nav-icon">☾</span><span>Sono e alimentação</span></button>
+          <button class="nav-item" data-page="monitoramento"><span class="nav-icon">⌁</span><span>Monitoramento contínuo</span></button>
+          <button class="nav-item" data-page="consultas"><span class="nav-icon">▦</span><span>Consultas</span></button>
+          <button class="nav-item" data-page="alertas"><span class="nav-icon">⚑</span><span>Alertas</span></button>
+          <button class="nav-item" data-page="relatorios"><span class="nav-icon">▤</span><span>Relatórios</span></button>
+          <button class="nav-item" data-page="configuracoes"><span class="nav-icon">⚙</span><span>Configurações</span></button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-planet" aria-hidden="true"><span></span></div>
+          <p>“Cuidar de quem explora o desconhecido também é uma missão.”</p>
+          <div class="sidebar-footline"><span></span> PROTÓTIPO LOCAL</div>
+        </div>
+      </aside>
+
+      <div class="main-column">
+        <header class="topbar">
+          <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Abrir menu">☰</button>
+          <a class="brand" href="#inicio" aria-label="Olho de Hórus, início" id="brand"></a>
+          <div class="brand-divider"></div>
+          <div class="module-mark"><div class="orbit-icon">◉</div><div><strong id="module-title">Pós-missão</strong><span>Recuperação <i>•</i> Saúde <i>•</i> Desempenho</span></div></div>
+          <div class="topbar-right"><span class="environment-label"><span class="status-dot"></span> Banco local SQLite</span><div class="divider"></div><div class="user-profile"><div class="avatar-small" id="user-initials">—</div><div><strong id="user-name">Carregando</strong><span id="user-role">Sessão</span></div></div><button class="logout-button" id="logout-button" title="Sair da sessão">Sair</button></div>
+        </header>
+
+        <main class="page-content">
+          <div class="prototype-banner"><span class="banner-icon">ⓘ</span><span><strong>Versão local em desenvolvimento</strong> · Use somente dados fictícios até validação clínica e de segurança.</span></div>
+          <section id="page-root" aria-live="polite"></section>
+          <footer class="app-footer"><span>OLHO DE HÓRUS <span class="footer-dot">•</span> PROTÓTIPO LOCAL</span><span>Registros locais: use dados fictícios. Não utilizar para decisões clínicas.</span></footer>
+        </main>
+      </div>
+    </div>
+    <div id="auth-root"></div>
+    <div id="modal-root"></div>
+    <div id="toast-root" aria-live="polite"></div>
+  </body>
+</html>
