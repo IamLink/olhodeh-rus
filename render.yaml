@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: olho-de-horus
+    runtime: node
+    region: virginia
+    plan: free
+    buildCommand: npm ci && npm run build:web && npm prune --omit=dev
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: HOST
+        value: 0.0.0.0
+      - key: TRUST_PROXY
+        value: "1"
+      - key: APP_SESSION_SECRET
+        generateValue: true
+      - key: OH_SETUP_TOKEN
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
